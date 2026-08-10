@@ -56,8 +56,8 @@ az acr login --name moneyhubrm565799
 --Qual proximo passo qual deve fazer 
 
 docker login moneyhubrm565799.azurecr.io \
- -u $ADMIN_USERNAME \
- -p $ADMIN_PASSWOR
+ -u $moneyhubrm565799 \
+ -p $UwIwnTULvbMOmJpAVddP8b6Onn7vLcvXgkLOUm7V2jU6J06iebvDJQQJ99CHACBsN54Eqg7NAAACAZCRHeb8
 
  --Esse vai subir essa imagem para la so precisa pegar o nome da imagem ou nomear a imagem
  docker tag mysql-dimdim moneyhubrm9999.azurecr.io/mysql-dimdim:v1
