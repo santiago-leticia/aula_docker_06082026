@@ -59,6 +59,16 @@ docker login moneyhubrm565799.azurecr.io \
  -u $moneyhubrm565799 \
  -p $UwIwnTULvbMOmJpAVddP8b6Onn7vLcvXgkLOUm7V2jU6J06iebvDJQQJ99CHACBsN54Eqg7NAAACAZCRHeb8
 
+
+az acr login --name moneyhubrm565799 --expose-token
+
+
+TOKEN=$(az acr login --name moneyhubrm565799 --expose-token --output tsv --query accessToken)
+
+echo $TOKEN | docker login moneyhubrm565799.azurecr.io --username 00000000-0000-0000-0000-000000000000 --password-stdin
+
+
+
  --Esse vai subir essa imagem para la so precisa pegar o nome da imagem ou nomear a imagem
  docker tag mysql-dimdim moneyhubrm9999.azurecr.io/mysql-dimdim:v1
 
