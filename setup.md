@@ -51,14 +51,12 @@ echo "Username: $ADMIN_USERNAME" && echo "Password: $ADMIN_PASSWORD"
 --Depois faz o login com nome e com codigo que esta presente na chave de acesso
 
 --Essa parte aqui vai ser o login para acessar com a nome do usuario e a senha presente 
-az acr login --name moneyhubrm565799
 
 --Qual proximo passo qual deve fazer 
 
 docker login moneyhubrm565799.azurecr.io \
- -u $moneyhubrm565799 \
- -p $UwIwnTULvbMOmJpAVddP8b6Onn7vLcvXgkLOUm7V2jU6J06iebvDJQQJ99CHACBsN54Eqg7NAAACAZCRHeb8
-
+  -u moneyhubrm565799 \
+  -p UwIwnTULvbMOmJpAVddP8b6Onn7vLcvXgkLOUm7V2jU6J06iebvDJQQJ99CHACBsN54Eqg7NAAACAZCRHeb8
 
 az acr login --name moneyhubrm565799 --expose-token
 
