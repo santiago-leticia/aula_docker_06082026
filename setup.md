@@ -17,6 +17,7 @@ az group create -l canadacentral -n rg-money-hub
 
 --Precisa trocar o nome e localidade no qual voce tem  direito de trocas
 --essa parte é usuario administrador para para os push ou quando a criação
+
 az acr create \
  --resource-group rg-money-hub \
  --name moneyhubrm565799 \
@@ -68,9 +69,30 @@ echo $TOKEN | docker login moneyhubrm565799.azurecr.io --username 00000000-0000-
 
 
  --Esse vai subir essa imagem para la so precisa pegar o nome da imagem ou nomear a imagem
- docker tag mysql-dimdim moneyhubrm9999.azurecr.io/mysql-dimdim:v1
+docker tag mysql-dimdim moneyhubrm565799.azurecr.io/mysql-dimdim:v1
+
+docker tag api-dimdim moneyhubrm565799.azurecr.io/api-dimdim:v1
+
+docker tag api-transacoes moneyhubrm565799.azurecr.io/api-transacoes:v1
+
+--Dar o push
+docker push moneyhubrm565799.azurecr.io/mysql-dimdim:v1
+
+docker push moneyhubrm565799.azurecr.io/api-dimdim:v1
+
+docker push moneyhubrm565799.azurecr.io/api-transacoes:v1
 
 
---isso aqui vai enviar na nossa imagem para o nosso repositorio
- docker push moneyhubrm9999.azurecr.io/api-dimdim:v1
+--Lista para ver as imagems que tem dentro do container
+
+az acr repository list --name moneyhubrm565799 --output table
+
+Apos disso, para nao perde credito precisa remova do ambiente docker
+--E isso nao remove a imagem do repositorio no registro no registro de container do azure
+
+docker rmi moneyhubrm565799.azurecr.io/api-transacoes:v1
+
+docker rmi moneyhubrm565799.azurecr.io/api-dimdim:v1
+
+docker rmi moneyhubrm565799.azurecr.io/mysql-dimdim:v1
 
