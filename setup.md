@@ -147,3 +147,19 @@ if ! az storage share exists --name "$file_share_name" --account-name "$storageA
 else
   echo "O compartilhamento de arquivos '$file_share_name' já existe"
 fi
+
+
+# Configuração para o dim dim do armazem
+
+# Variaveis
+rm=rm9999
+resourceGroup="rg-money-hub"
+location="canadacentral"
+MYSQL_ROOT_PASSWORD=dimdim100206
+MYSQL_DATABASE=db-dimdim
+MYSQL_USER=user-dimdim-le
+MYSQL_PASSWORD=dimdim100206
+SPRING_DATASOURCE_URL=jdbc:mysql://mysql-dimdim:3306/db-dimdim
+SPRING_DATASOURCE_USERNAME=user-dimdim
+SPRING_DATASOURCE_PASSWORD=dimdim100206
+CONNECTIONSTRINGS='Server=mysql-dimdim;Port=3306;Database=db-dimdim;User=user-dimdim;Password=dimdim100206;'
